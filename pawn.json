@@ -1,0 +1,29 @@
+{
+	"user": "WaylandProject",
+	"repo": "mysql_old",
+	"entry": "test/test.pwn",
+	"output": "test/test.amx",
+	"dependencies": ["sampctl/pawn-stdlib"],
+	"resources": [
+        {
+            "name": "mysql_old-linux-x86.zip",
+            "platform": "linux",
+			"archive": true,
+			"includes": ["mysql_old/include"],
+            "plugins": ["mysql_old/mysql_static.so"]
+        },
+        {
+            "name": "mysql_old-windows-x86.zip",
+            "platform": "windows",
+			"archive": true,
+			"includes": ["mysql_old/include"],
+			"plugins": ["mysql_old/mysql.dll"],
+			"files": {
+                "mysql_old/libmysql.dll": "libmysql.dll"
+            }
+        }
+	],
+	"runtime": {
+        "plugins": ["WaylandProject/mysql_old"]
+    }
+}
